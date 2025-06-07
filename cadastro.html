@@ -21,7 +21,7 @@
         <form>
             <h1>Cadraste seus dados</h1>
             <div class="cada_nome">
-                <label for="cadas_nome">Nome</label>
+                <label for="cadas_nome">Nome da intituição</label>
                 <input
                 type="text"
                 id="LoginNome"
@@ -32,7 +32,7 @@
             </div>
             
             <div class="cada_email">
-                <label for="cadas_senha">Email</label>
+                <label for="cadas_senha">Email para contato</label>
                 <input
                 type="text"
                 id="LoginEmail"
@@ -41,7 +41,16 @@
                 required
                 />
             </div>
-            
+
+            <div class="cada_tipo">
+                <label for="cadas_tipo">Qual é o tipo da Necessidade</label>
+                <select id="Tipo">
+                    <option value="">Selecione...</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Meio Ambiente">Meio Ambiente</option>
+                </select>
+            </div>
             <div class="cada_cpf">
                 <label for="cadas_cpf">CPF</label>
                 <input
@@ -52,8 +61,8 @@
                 required
                 />
             </div>
-            
-            <label>Endereço</label>
+
+            <label>Endereço da instituição</label>
             <div class="form-group">
                 <label for="cep">CEP:</label>
                 <input
