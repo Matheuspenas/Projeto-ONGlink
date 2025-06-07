@@ -3,10 +3,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>cadastro de Necessidade</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/cadrastro.css'>
 </head>
 <body>
     <header>
@@ -17,92 +16,93 @@
             <a href="#">Cadastrar Necessidade</a>
         </nav>
     </header>
-
+    
     <main>
         <form>
             <h1>Cadraste seus dados</h1>
             <div class="cada_nome">
-            <label for="cadas_nome">Nome</label>
-            <input
+                <label for="cadas_nome">Nome</label>
+                <input
                 type="text"
                 id="LoginNome"
                 name="nome"
                 placeholder="Digite seu Nome"
                 required
-        />
+                />
             </div>
-
+            
             <div class="cada_email">
                 <label for="cadas_senha">Email</label>
                 <input
-                    type="text"
-                    id="LoginEmail"
-                    name="Email"
-                    placeholder="Digite seu email"
-                    required
+                type="text"
+                id="LoginEmail"
+                name="Email"
+                placeholder="Digite seu email"
+                required
                 />
             </div>
-
+            
             <div class="cada_cpf">
                 <label for="cadas_cpf">CPF</label>
                 <input
-                    type="text"
-                    id="LoginCpf"
-                    name="Cpf"
-                    placeholder="000.000.000-00"
-                    required
+                type="text"
+                id="LoginCpf"
+                name="Cpf"
+                placeholder="000.000.000-00"
+                required
                 />
             </div>
-
+            
             <label>Endereço</label>
             <div class="form-group">
                 <label for="cep">CEP:</label>
                 <input
-                    name="cep"
-                    type="text"
-                    id="cep"
-                    maxlength="9"
-                    placeholder="Digite seu CEP"
-                    onblur="pesquisacep(this.value);"
+                name="cep"
+                type="text"
+                id="cep"
+                maxlength="9"
+                placeholder="Digite seu CEP"
+                onblur="pesquisacep(this.value);"
                 />
             </div>
-
+            
             <div class="form-group">
                 <label for="rua">Rua:</label>
-            <input name="rua" type="text" id="rua" placeholder="Digite sua Rua" />
+                <input name="rua" type="text" id="rua" placeholder="Digite sua Rua" />
             </div>
-
+            
             <div class="form-group">
                 <label for="bairro">Bairro:</label>
                 <input
-                    name="bairro"
-                    type="text"
-                    id="bairro"
-                    placeholder="Digite seu Bairro"
+                name="bairro"
+                type="text"
+                id="bairro"
+                placeholder="Digite seu Bairro"
                 />
             </div>
-
+            
             <div class="form-group">
                 <label for="cidade">Cidade:</label>
                 <input
-                    name="cidade"
-                    type="text"
-                    id="cidade"
-                    placeholder="Digite sua Cidade"
+                name="cidade"
+                type="text"
+                id="cidade"
+                placeholder="Digite sua Cidade"
                 />
             </div>
-
+            
             <div class="form-group">
                 <label for="uf">Estado (UF):</label>
                 <input name="uf" type="text" id="uf" maxlength="2" placeholder="UF" />
             </div>
-
+            
             <button id="Salvar" type="submit">Entrar</button>
-    </form>
+        </form>
     </main>
     
     <footer> 
         <p>&copy; 2025 | ONGlink | Todos os direitos reservados</p>
     </footer>
+    <script src='main.js'></script>
 </body>
 </html>
