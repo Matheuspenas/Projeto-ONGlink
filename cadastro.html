@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>cadastro de Necessidade</title>
+    <title>Cadastro de Necessidade</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -17,39 +17,40 @@
       <h1>ONGlink</h1>
       <p>Conectando quem quer ajudar com quem precisa de ajuda</p>
       <nav class="headerNav">
-        <a href="./index.html">Pagina inicial</a>
+        <a href="./index.html">Página inicial</a>
         <a href="#">Visualizar Necessidade</a>
       </nav>
     </header>
 
     <main>
       <form>
-        <h1>Cadraste seus dados</h1>
+        <h1>Cadastre seus dados</h1>
+
         <div class="cada_nome">
-          <label for="cadas_nome">Nome da intituição</label>
+          <label for="LoginNome">Nome da instituição</label>
           <input
             type="text"
             id="LoginNome"
             name="nome"
-            placeholder="Digite seu Nome"
+            placeholder="Digite o nome da instituição"
             required
           />
         </div>
 
         <div class="cada_email">
-          <label for="cadas_senha">Email para contato</label>
+          <label for="LoginEmail">Email para contato</label>
           <input
             type="text"
             id="LoginEmail"
-            name="Email"
+            name="email"
             placeholder="Digite seu email"
             required
           />
         </div>
 
         <div class="cada_tipo">
-          <label for="cadas_tipo">Qual é o tipo da Necessidade</label>
-          <select id="Tipo">
+          <label for="Tipo">Tipo da necessidade</label>
+          <select id="Tipo" required>
             <option value="">Selecione...</option>
             <option value="Educação">Educação</option>
             <option value="Saúde">Saúde</option>
@@ -61,40 +62,42 @@
         </div>
 
         <div class="cada_titulo">
-          <label for="cadas_titulo">Dê um titulo para sua Necessidade</label>
+          <label for="LoginTitulo">Título da necessidade</label>
           <input
             type="text"
             id="LoginTitulo"
-            name="Titulo"
+            name="titulo"
             placeholder="Ex: Doação de Roupas"
             required
           />
         </div>
 
         <div class="cada_descricao">
-          <label for="cadas_descricao">Descreva sua Necessidade</label>
+          <label for="descricao">Descrição</label>
           <textarea
             id="descricao"
             name="descricao"
             rows="4"
+            placeholder="Descreva a necessidade aqui..."
             required
           ></textarea>
         </div>
 
         <div class="cada_cpf">
-          <label for="cadas_cpf">CPF</label>
+          <label for="LoginCpf">CPF</label>
           <input
             type="text"
             id="LoginCpf"
-            name="Cpf"
+            name="cpf"
             placeholder="000.000.000-00"
             required
           />
         </div>
 
-        <label>Endereço da instituição</label>
+        <h2>Endereço da instituição</h2>
+
         <div class="form-group">
-          <label for="cep">CEP:</label>
+          <label for="cep">CEP</label>
           <input
             name="cep"
             type="text"
@@ -106,32 +109,32 @@
         </div>
 
         <div class="form-group">
-          <label for="rua">Rua:</label>
-          <input name="rua" type="text" id="rua" placeholder="Digite sua Rua" />
+          <label for="rua">Rua</label>
+          <input name="rua" type="text" id="rua" placeholder="Digite sua rua" />
         </div>
 
         <div class="form-group">
-          <label for="bairro">Bairro:</label>
+          <label for="bairro">Bairro</label>
           <input
             name="bairro"
             type="text"
             id="bairro"
-            placeholder="Digite seu Bairro"
+            placeholder="Digite seu bairro"
           />
         </div>
 
         <div class="form-group">
-          <label for="cidade">Cidade:</label>
+          <label for="cidade">Cidade</label>
           <input
             name="cidade"
             type="text"
             id="cidade"
-            placeholder="Digite sua Cidade"
+            placeholder="Digite sua cidade"
           />
         </div>
 
         <div class="form-group">
-          <label for="uf">Estado (UF):</label>
+          <label for="uf">Estado (UF)</label>
           <input name="uf" type="text" id="uf" maxlength="2" placeholder="UF" />
         </div>
 
@@ -142,6 +145,7 @@
     <footer>
       <p>&copy; 2025 | ONGlink | Todos os direitos reservados</p>
     </footer>
-    <script src="main.js"></script>
+
+    <script src="./js/cadastro.js"></script>
   </body>
 </html>
