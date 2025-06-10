@@ -1,16 +1,21 @@
+/* === Base do body === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background-color: #ffffff;
 }
 
-header, .headerNav, footer {
+/* === Estilo do cabeçalho e rodapé === */
+header,
+.headerNav,
+footer {
   color: #fff;
-  background-color:  #1e3a5f;
+  background-color: #1e3a5f;
   padding: 10px;
   text-align: center;
 }
 
+/* === Navegação no cabeçalho === */
 .headerNav a {
   color: #fff;
   text-decoration: none;
@@ -18,3 +23,27 @@ header, .headerNav, footer {
   font-weight: bold;
 }
 
+/* === Container do formulário === */
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #e6f2fa;
+  border-radius: 8px;
+  border: solid 2px #1e3a5f;
+}
+
+/* === Título do formulário === */
+h1 {
+  text-align: center;
+  color: #1e3a5f;
+}
+
+/* === Layout de campos do formulário === */
+div[class^="cada_"],
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
