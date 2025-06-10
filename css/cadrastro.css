@@ -97,3 +97,39 @@ button#Salvar {
 button#Salvar:hover {
   background-color: #163050;
 }
+
+.message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* Estilo para CPF válido */
+.message.valido {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Estilo para CPF inválido */
+.message.invalido {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Estilo para CPF incompleto */
+.message.incompleto {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+}
+
+/* Efeito de desaparecimento opcional */
+.message.hidden {
+  opacity: 0;
+}
