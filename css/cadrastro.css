@@ -32,7 +32,8 @@ form {
 }
 
 /* === Título do formulário === */
-main h1 {
+main h1,
+main h2 {
   text-align: center;
   color: #1e3a5f;
 }
