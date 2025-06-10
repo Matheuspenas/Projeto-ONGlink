@@ -1,3 +1,4 @@
+// metodo para validar cpf
 document.addEventListener("DOMContentLoaded", function () {
   function validarCpf(cpf) {
     cpf = cpf.replace(/\D/g, "");
@@ -135,3 +136,64 @@ function pesquisacep(valor) {
     limpa_formulario_cep();
   }
 }
+
+// Aguarda o carregamento completo do DOM antes de executar o código
+document.addEventListener("DOMContentLoaded", function () {
+  // Verifica se há um formulário na página (evita erro em páginas sem formulário)
+  if (!document.querySelector("form")) return;
+
+  // Seleciona o formulário
+  const form = document.querySelector("form");
+
+  // Seleciona os elementos do modal de confirmação
+  const modal = document.getElementById("modalConfirmacao");
+  const btnFechar = document.getElementById("btnFecharModal");
+  const btnVisualizar = document.getElementById("btnVisualizar");
+
+  // Evento de envio do formulário
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    // Cria um objeto com os dados preenchidos pelo usuário
+    const novaNecessidade = {
+      nome: document.getElementById("LoginNome").value,
+      email: document.getElementById("LoginEmail").value,
+      tipo: document.getElementById("Tipo").value,
+      titulo: document.getElementById("LoginTitulo").value,
+      descricao: document.getElementById("descricao").value,
+      cpf: document.getElementById("LoginCpf").value,
+      endereco: {
+        cep: document.getElementById("cep").value,
+        rua: document.getElementById("rua").value,
+        bairro: document.getElementById("bairro").value,
+        cidade: document.getElementById("cidade").value,
+        uf: document.getElementById("uf").value,
+      },
+    };
+
+    // Recupera a lista de necessidades do localStorage (ou cria uma nova lista vazia)
+    const lista = JSON.parse(localStorage.getItem("necessidades")) || [];
+
+    // Adiciona a nova necessidade à lista
+    lista.push(novaNecessidade);
+
+    // Salva a lista atualizada no localStorage
+    localStorage.setItem("necessidades", JSON.stringify(lista));
+
+    // Limpa o formulário após o envio
+    form.reset();
+
+    // Exibe o modal de confirmação
+    modal.style.display = "flex";
+  });
+
+  // Fecha o modal ao clicar no botão "Fechar"
+  btnFechar.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Redireciona para a página de visualização ao clicar no botão "Visualizar"
+  btnVisualizar.addEventListener("click", () => {
+    window.location.href = "visualizar.html";
+  });
+});
