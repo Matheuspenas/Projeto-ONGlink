@@ -53,3 +53,50 @@ main {
   max-width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
+/* Container de cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Card individual */
+.action-card {
+  background-color: #f0f8ff; /* Azul claro suave */
+  border: 1px solid #cce0f5;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(30, 58, 95, 0.1);
+  width: 300px;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(30, 58, 95, 0.2);
+}
+
+/* Título do card */
+.card h3 {
+  color: #1e3a5f;
+  margin: 0 0 12px 0;
+  font-size: 22px;
+}
+
+/* Texto do card */
+.card p {
+  font-size: 15px;
+  color: #333;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+/* Destaques opcionais */
+.card strong {
+  color: #0077cc;
+}

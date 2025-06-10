@@ -31,24 +31,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function aplicarFiltro() {
-    const termo = pesquisaInput.value.toLowerCase();
-    const tipo = filtroSelect.value;
-
-    const filtradas = lista.filter((item) => {
-      const correspondePesquisa =
-        item.titulo.toLowerCase().includes(termo) ||
-        item.descricao.toLowerCase().includes(termo);
-      const correspondeTipo = tipo === "" || item.tipo === tipo;
-
-      return correspondePesquisa && correspondeTipo;
-    });
-
-    exibirNecessidades(filtradas);
-  }
-
-  pesquisaInput.addEventListener("input", aplicarFiltro);
-  filtroSelect.addEventListener("change", aplicarFiltro);
-
-  exibirNecessidades(lista);
-});
