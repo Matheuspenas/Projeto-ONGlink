@@ -20,6 +20,19 @@ footer {
   font-weight: bold;
 }
 
+/* estilização da logo */
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+h1 .logo {
+  height: 5rem;
+  margin-right: 0.5rem;
+}
+
 /* === Container do formulário === */
 form {
   max-width: 500px;
