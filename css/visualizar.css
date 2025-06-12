@@ -1,8 +1,21 @@
-/* Estilos base */
+html,
 body {
-  font-family: Arial, sans-serif;
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
   background-color: #ffffff;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
 }
 
 /* Cabeçalho e rodapé */
