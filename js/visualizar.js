@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const pesquisaInput = document.getElementById("pesquisa");
   const filtroSelect = document.getElementById("filtroTipo");
 
+  // Função para formatar CPF com censura
+  function formatarCpfCensurado(cpf) {
+    const numeros = cpf.replace(/\D/g, "");
+    if (numeros.length !== 11) return "CPF inválido";
+    return `${numeros.substr(0, 3)}.***.***-${numeros.substr(9, 2)}`;
+  }
+
   function exibirNecessidades(filtradas) {
     container.innerHTML = "";
 
@@ -24,7 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Tipo:</strong> ${item.tipo}</p>
         <p><strong>Descrição:</strong> ${item.descricao}</p>
         <p><strong>Contato:</strong> ${item.email}</p>
-        <p><strong>Endereço:</strong> ${item.endereco.rua}, ${item.endereco.bairro}, ${item.endereco.cidade} - ${item.endereco.uf}</p>
+        <p><strong>CPF do representante:</strong> ${formatarCpfCensurado(
+          item.cpf
+        )}</p>
+        <p><strong>Endereço:</strong> ${item.endereco.rua}, ${
+        item.endereco.bairro
+      }, ${item.endereco.cidade} - ${item.endereco.uf}</p>
       `;
 
       container.appendChild(card);
