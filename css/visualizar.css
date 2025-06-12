@@ -28,6 +28,21 @@ footer {
   text-align: center;
 }
 
+.headerNav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.headerNav a:hover {
+  border-color: #0077cc;
+}
+
 /* estilização da logo */
 h1 {
   display: flex;
