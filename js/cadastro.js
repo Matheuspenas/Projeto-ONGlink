@@ -1,25 +1,25 @@
-// metodo para validar cpf
 document.addEventListener("DOMContentLoaded", function () {
+  // Função para validar o CPF
   function validarCpf(cpf) {
     cpf = cpf.replace(/\D/g, "");
-    if (cpf.length !== 11) return null;
+    if (cpf.length !== 11) return null; // Verifica se o CPF tem 11 dígitos
 
     let soma = 0;
     let resto;
 
+    // Calcula o primeiro dígito verificador
     for (let i = 1; i <= 9; i++) {
       soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
     }
-
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     if (resto !== parseInt(cpf.substring(9, 10))) return false;
 
+    // Calcula o segundo dígito verificador
     soma = 0;
     for (let i = 1; i <= 10; i++) {
       soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
     }
-
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     if (resto !== parseInt(cpf.substring(10, 11))) return false;
@@ -31,29 +31,32 @@ document.addEventListener("DOMContentLoaded", function () {
   let typingTimer;
   const doneTypingInterval = 800;
 
-  // Cria a mensagem abaixo do campo
+  // Cria uma div para exibir a mensagem de validação abaixo do campo CPF
   const messageDiv = document.createElement("div");
   messageDiv.id = "message";
   messageDiv.className = "message";
   cpfInput.insertAdjacentElement("afterend", messageDiv);
 
+  // Aplica máscara e inicia validação após pausa na digitação
   cpfInput.addEventListener("input", function (e) {
     clearTimeout(typingTimer);
 
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
 
-    // Máscara
+    // Aplica a máscara XXX.XXX.XXX-XX
     value = value.replace(/(\d{3})(\d)/, "$1.$2");
     value = value.replace(/(\d{3})(\d)/, "$1.$2");
     value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     e.target.value = value;
 
+    // Aguarda para validar o CPF
     typingTimer = setTimeout(() => {
       validarECriarFeedback(e.target.value);
     }, doneTypingInterval);
   });
 
+  // Mostra mensagem de acordo com o status da validação do CPF
   function validarECriarFeedback(cpf) {
     const status = validarCpf(cpf);
 
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     messageDiv.style.display = "block";
 
+    // Esconde a mensagem após 4 segundos
     setTimeout(() => {
       messageDiv.style.display = "none";
       messageDiv.textContent = "";
@@ -78,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000);
   }
 
+  // Aplica classes CSS de acordo com status
   function applyStyles(status) {
     cpfInput.className = status;
     messageDiv.className = `message ${status}`;
@@ -85,10 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ------------------------------
-// API ViaCEP
+// Integração com a API ViaCEP
 // ------------------------------
 
-// Limpa os campos de endereço
+// Função para limpar os campos de endereço se o CEP for inválido ou não encontrado
 function limpa_formulario_cep() {
   document.getElementById("rua").value = "";
   document.getElementById("bairro").value = "";
@@ -96,9 +101,9 @@ function limpa_formulario_cep() {
   document.getElementById("uf").value = "";
 }
 
-// Callback da API ViaCEP
 function meu_callback(conteudo) {
   if (!("erro" in conteudo)) {
+    // Preenche os campos com os dados retornados
     document.getElementById("rua").value = conteudo.logradouro;
     document.getElementById("bairro").value = conteudo.bairro;
     document.getElementById("cidade").value = conteudo.localidade;
@@ -109,7 +114,7 @@ function meu_callback(conteudo) {
   }
 }
 
-// Função principal chamada no onblur do input CEP
+// Função principal para buscar o endereço ao sair do campo CEP
 function pesquisacep(valor) {
   const cep = valor.replace(/\D/g, "");
 
@@ -117,13 +122,11 @@ function pesquisacep(valor) {
     const validacep = /^[0-9]{8}$/;
 
     if (validacep.test(cep)) {
-      // Coloca "..." enquanto busca
       document.getElementById("rua").value = "...";
       document.getElementById("bairro").value = "...";
       document.getElementById("cidade").value = "...";
       document.getElementById("uf").value = "...";
 
-      // Cria script dinâmico com callback
       const script = document.createElement("script");
       script.src =
         "https://viacep.com.br/ws/" + cep + "/json/?callback=meu_callback";
@@ -137,24 +140,23 @@ function pesquisacep(valor) {
   }
 }
 
-// Aguarda o carregamento completo do DOM antes de executar o código
+// ------------------------------
+// Envio do formulário e salvamento no localStorage
+// ------------------------------
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Verifica se há um formulário na página (evita erro em páginas sem formulário)
   if (!document.querySelector("form")) return;
 
-  // Seleciona o formulário
   const form = document.querySelector("form");
-
-  // Seleciona os elementos do modal de confirmação
   const modal = document.getElementById("modalConfirmacao");
   const btnFechar = document.getElementById("btnFecharModal");
   const btnVisualizar = document.getElementById("btnVisualizar");
 
-  // Evento de envio do formulário
+  // Intercepta o envio do formulário
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Impede o envio padrão do formulário
+    e.preventDefault();
 
-    // Cria um objeto com os dados preenchidos pelo usuário
+    // Cria o objeto com os dados preenchidos no formulário
     const novaNecessidade = {
       nome: document.getElementById("LoginNome").value,
       email: document.getElementById("LoginEmail").value,
@@ -171,28 +173,28 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     };
 
-    // Recupera a lista de necessidades do localStorage (ou cria uma nova lista vazia)
+    // Recupera lista existente ou cria nova
     const lista = JSON.parse(localStorage.getItem("necessidades")) || [];
 
-    // Adiciona a nova necessidade à lista
+    // Adiciona a nova necessidade
     lista.push(novaNecessidade);
 
-    // Salva a lista atualizada no localStorage
+    // Salva a nova lista no localStorage
     localStorage.setItem("necessidades", JSON.stringify(lista));
 
     // Limpa o formulário após o envio
     form.reset();
 
-    // Exibe o modal de confirmação
+    // Mostra o modal de confirmação
     modal.style.display = "flex";
   });
 
-  // Fecha o modal ao clicar no botão "Fechar"
+  // Fecha o modal de confirmação
   btnFechar.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // Redireciona para a página de visualização ao clicar no botão "Visualizar"
+  // Redireciona para a página de visualização
   btnVisualizar.addEventListener("click", () => {
     window.location.href = "visualizar.html";
   });
