@@ -8,7 +8,7 @@ Projeto web para cadastro de ONGs com formulário de inserção, listagem dinâm
 - 💾 Armazenamento dos dados diretamente no `localStorage` do navegador.
 - 📊 Listagem automática das ONGs cadastradas com exibição em cards.
 - 🌍 Integração com API de CEP (via [viacep.com.br](https://viacep.com.br)) para preenchimento automático de endereço.
-- 🧾 Validação de CPF para garantir dados corretos no cadastro.
+- 🧾 Validação de CPF e EMAIL para garantir dados corretos no cadastro.
 
 ## 🚀 Teste você mesmo
 
@@ -43,7 +43,7 @@ Projeto web para cadastro de ONGs com formulário de inserção, listagem dinâm
 3. As informações são armazenadas no `localStorage`.
 4. A listagem das ONGs é atualizada dinamicamente na tela.
 5. A API ViaCEP é utilizada para preencher o endereço com base no CEP informado.
-6. A validação de CPF é feita para assegurar a autenticidade dos dados inseridos.
+6. A validação de CPF e EMAIL é feita para assegurar a autenticidade dos dados inseridos.
 
 ## ✨ Interface
 
