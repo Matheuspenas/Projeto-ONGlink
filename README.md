@@ -17,14 +17,17 @@ Projeto web para cadastro de ONGs com formulário de inserção, listagem dinâm
 
 ## 🖥️Demoatrações
 
-- Demostração da pagina inicial
-- ![Demostração da pagina inicial](./gifs/demostraçãohome.gif)
+# Demostração da pagina inicial
 
-- Demostração da pagina de cadastro
-- ![Demostração da pagina de cadastro](./gifs/demostraçãocadastro.gif)
+![Demostração da pagina inicial](./gifs/demostraçãohome.gif)
 
-- Demostração da pagina de visualização de Necessidade
-- ![Demostração da pagina de visualização de Necessidade](./gifs/demostraçãovisualizar.gif)
+# Demostração da pagina de cadastro
+
+![Demostração da pagina de cadastro](./gifs/demostraçãocadastro.gif)
+
+# Demostração da pagina de visualização de Necessidade
+
+![Demostração da pagina de visualização de Necessidade](./gifs/demostraçãovisualizar.gif)
 
 ## 💻 Tecnologias utilizadas
 
