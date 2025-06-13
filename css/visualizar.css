@@ -143,3 +143,13 @@ main {
 .card strong {
   color: #0077cc;
 }
+
+.card p, .card h3, .card strong {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.action-card {
+  max-height: 100%;
+  overflow-y: auto;
+}
