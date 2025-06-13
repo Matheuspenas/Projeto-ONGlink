@@ -116,40 +116,42 @@ main {
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
+  overflow: hidden;
+  box-sizing: border-box;
+  word-break: break-word;         
+  overflow-wrap: break-word;
+  white-space: normal;            
 }
 
 /* Efeito de elevação no hover do card */
-.card:hover {
+.action-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 14px rgba(30, 58, 95, 0.2);
 }
 
 /* Título dentro dos cards */
-.card h3 {
+.action-card h2 {
   color: #1e3a5f;
   margin: 0 0 12px 0;
   font-size: 22px;
+  word-break: break-word;
+  white-space: normal;
 }
 
 /* Parágrafos dentro dos cards */
-.card p {
+.action-card p {
   font-size: 15px;
   color: #333;
   margin: 6px 0;
   line-height: 1.4;
-}
-
-/* Elementos destacados nos cards*/
-.card strong {
-  color: #0077cc;
-}
-
-.card p, .card h3, .card strong {
   word-break: break-word;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
-.action-card {
-  max-height: 100%;
-  overflow-y: auto;
+/* Elementos destacados nos cards */
+.action-card strong {
+  color: #0077cc;
+  word-break: break-word;
+  white-space: normal;
 }
