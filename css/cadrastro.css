@@ -211,3 +211,23 @@ button#Salvar:hover {
 .modal .botoes button:hover {
   background-color: #005fa3;
 }
+
+.cada_descricao small {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e3a5f;
+  align-self: flex-end;
+  transition: color 0.2s ease;
+}
+
+/* Quando estiver próximo do limite (visual warning) */
+.cada_descricao small.limite-proximo {
+  color: #cc8800;
+}
+
+/* Quando atingir ou ultrapassar o limite (vermelho) */
+.cada_descricao small.limite-ultrapassado {
+  color: #cc0000;
+  font-weight: 600;
+}

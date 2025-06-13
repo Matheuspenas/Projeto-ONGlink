@@ -1,185 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Cadastro de Necessidade</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="./css/cadrastro.css"
-    />
-  </head>
-  <body>
-    <!-- cabeçario da pagina -->
-    <header>
-      <h1>
-        <img src="./img/logoong.png" alt="logoong" class="logo" />
-        ONGlink
-      </h1>
-      <p>Conectando quem quer ajudar com quem precisa de ajuda</p>
-      <nav class="headerNav">
-        <a href="./index.html">Página inicial</a>
-        <a href="./visualizar.html">Visualizar Necessidade</a>
-      </nav>
-    </header>
 
-    <main>
-      <!-- formulario de cadastro -->
-      <form>
-        <h1>Cadastre seus dados</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Cadastro de Necessidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/cadrastro.css" />
+</head>
 
-        <div class="cada_nome">
-          <label for="LoginNome">Nome da instituição</label>
-          <input
-            type="text"
-            id="LoginNome"
-            name="nome"
-            placeholder="Digite o nome da instituição"
-            required
-          />
-        </div>
+<body>
+  <!-- cabeçario da pagina -->
+  <header>
+    <h1>
+      <img src="./img/logoong.png" alt="logoong" class="logo" />
+      ONGlink
+    </h1>
+    <p>Conectando quem quer ajudar com quem precisa de ajuda</p>
+    <nav class="headerNav">
+      <a href="./index.html">Página inicial</a>
+      <a href="./visualizar.html">Visualizar Necessidade</a>
+    </nav>
+  </header>
 
-        <div class="cada_email">
-          <label for="LoginEmail">Email para contato</label>
-          <input
-            type="text"
-            id="LoginEmail"
-            name="email"
-            placeholder="Digite seu email"
-            required
-          />
-        </div>
+  <main>
+    <!-- formulario de cadastro -->
+    <form>
+      <h1>Cadastre seus dados</h1>
 
-        <div class="cada_tipo">
-          <label for="Tipo">Tipo da necessidade</label>
-          <select id="Tipo" required>
-            <option value="">Selecione...</option>
-            <option value="Educação">Educação</option>
-            <option value="Saúde">Saúde</option>
-            <option value="Meio Ambiente">Meio Ambiente</option>
-            <option value="Doação de Roupas">Doação de Roupas</option>
-            <option value="Doação de Alimentos">Doação de Alimentos</option>
-            <option value="Outros">Outros</option>
-          </select>
-        </div>
+      <div class="cada_nome">
+        <label for="LoginNome">Nome da instituição</label>
+        <input type="text" id="LoginNome" name="nome" placeholder="Digite o nome da instituição" required />
+      </div>
 
-        <div class="cada_titulo">
-          <label for="LoginTitulo">Título da necessidade</label>
-          <input
-            type="text"
-            id="LoginTitulo"
-            name="titulo"
-            placeholder="Ex: Doação de Roupas"
-            required
-          />
-        </div>
+      <div class="cada_email">
+        <label for="LoginEmail">Email para contato</label>
+        <input type="text" id="LoginEmail" name="email" placeholder="Digite seu email" required />
+      </div>
 
-        <div class="cada_descricao">
-          <label for="descricao">Descrição</label>
-          <textarea
-            id="descricao"
-            name="descricao"
-            rows="4"
-            placeholder="Descreva a necessidade aqui..."
-            required
-          ></textarea>
-        </div>
+      <div class="cada_tipo">
+        <label for="Tipo">Tipo da necessidade</label>
+        <select id="Tipo" required>
+          <option value="">Selecione...</option>
+          <option value="Educação">Educação</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Meio Ambiente">Meio Ambiente</option>
+          <option value="Doação de Roupas">Doação de Roupas</option>
+          <option value="Doação de Alimentos">Doação de Alimentos</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
 
-        <div class="cada_cpf">
-          <label for="LoginCpf">CPF do Repesentante</label>
-          <input
-            type="text"
-            id="LoginCpf"
-            name="cpf"
-            placeholder="000.000.000-00"
-            required
-          />
-        </div>
+      <div class="cada_titulo">
+        <label for="LoginTitulo">Título da necessidade</label>
+        <input type="text" id="LoginTitulo" name="titulo" placeholder="Ex: Doação de Roupas" required />
+      </div>
 
-        <!-- seção de alimenação de ide via cep -->
-        <h2>Endereço da instituição</h2>
+      <div class="cada_descricao">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva a necessidade aqui..." required
+          maxlength="120"></textarea>
+        <small id="contador">0 / 120</small>
+      </div>
 
-        <div class="form-group">
-          <label for="cep">CEP</label>
-          <input
-            name="cep"
-            type="text"
-            id="cep"
-            maxlength="9"
-            placeholder="Digite seu CEP"
-            onblur="pesquisacep(this.value);"
-            required
-          />
-        </div>
 
-        <div class="form-group">
-          <label for="rua">Rua</label>
-          <input
-            name="rua"
-            type="text"
-            id="rua"
-            placeholder="Digite sua rua"
-            required
-          />
-        </div>
+      <div class="cada_cpf">
+        <label for="LoginCpf">CPF do Repesentante</label>
+        <input type="text" id="LoginCpf" name="cpf" placeholder="000.000.000-00" required />
+      </div>
 
-        <div class="form-group">
-          <label for="bairro">Bairro</label>
-          <input
-            name="bairro"
-            type="text"
-            id="bairro"
-            placeholder="Digite seu bairro"
-            required
-          />
-        </div>
+      <!-- seção de alimenação de ide via cep -->
+      <h2>Endereço da instituição</h2>
 
-        <div class="form-group">
-          <label for="cidade">Cidade</label>
-          <input
-            name="cidade"
-            type="text"
-            id="cidade"
-            placeholder="Digite sua cidade"
-            required
-          />
-        </div>
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input name="cep" type="text" id="cep" maxlength="9" placeholder="Digite seu CEP"
+          onblur="pesquisacep(this.value);" required />
+      </div>
 
-        <div class="form-group">
-          <label for="uf">Estado (UF)</label>
-          <input
-            name="uf"
-            type="text"
-            id="uf"
-            maxlength="2"
-            placeholder="UF"
-            required
-          />
-        </div>
+      <div class="form-group">
+        <label for="rua">Rua</label>
+        <input name="rua" type="text" id="rua" placeholder="Digite sua rua" required />
+      </div>
 
-        <button id="Salvar" type="submit">Enviar</button>
-      </form>
+      <div class="form-group">
+        <label for="bairro">Bairro</label>
+        <input name="bairro" type="text" id="bairro" placeholder="Digite seu bairro" required />
+      </div>
 
-      <!-- pop up de modalConfirmacao -->
-      <div id="modalConfirmacao" class="modal">
-        <div class="modal-conteudo">
-          <h2>Necessidade cadastrada com sucesso!</h2>
-          <div class="botoes">
-            <button id="btnVisualizar">Visualizar</button>
-            <button id="btnFecharModal">Fechar</button>
-          </div>
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input name="cidade" type="text" id="cidade" placeholder="Digite sua cidade" required />
+      </div>
+
+      <div class="form-group">
+        <label for="uf">Estado (UF)</label>
+        <input name="uf" type="text" id="uf" maxlength="2" placeholder="UF" required />
+      </div>
+
+      <button id="Salvar" type="submit">Enviar</button>
+    </form>
+
+    <!-- pop up de modalConfirmacao -->
+    <div id="modalConfirmacao" class="modal">
+      <div class="modal-conteudo">
+        <h2>Necessidade cadastrada com sucesso!</h2>
+        <div class="botoes">
+          <button id="btnVisualizar">Visualizar</button>
+          <button id="btnFecharModal">Fechar</button>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- rodapé da página -->
-    <footer>
-      <p>&copy; 2025 | ONGlink | Todos os direitos reservados</p>
-    </footer>
+  <!-- rodapé da página -->
+  <footer>
+    <p>&copy; 2025 | ONGlink | Todos os direitos reservados</p>
+  </footer>
 
-    <script src="./js/cadastro.js"></script>
-  </body>
+  <script src="./js/cadastro.js"></script>
+</body>
+
 </html>

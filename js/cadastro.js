@@ -199,3 +199,27 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "visualizar.html";
   });
 });
+
+// função para contagem de caracteres da text area
+  const descricao = document.getElementById("descricao");
+  const contador = document.getElementById("contador");
+  const limite = 120;
+
+  descricao.addEventListener("input", () => {
+    const caracteres = descricao.value.length;
+    contador.textContent = `${caracteres} / ${limite}`;
+
+    // Resetando classes
+    contador.classList.remove("limite-proximo", "limite-ultrapassado");
+
+    // Alerta visual se estiver chegando perto do limite
+    if (caracteres > limite * 0.9 && caracteres < limite) {
+      contador.classList.add("limite-proximo");
+    }
+
+    // Se ultrapassar o limite (por JS ou manipulação)
+    if (caracteres >= limite) {
+      contador.classList.add("limite-ultrapassado");
+    }
+  });
+
