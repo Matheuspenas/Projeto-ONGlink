@@ -1,9 +1,11 @@
+/* === Estilo base do corpo === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background-color: #ffffff;
 }
 
+/* === Cabeçalho, navegação e rodapé com cor e centralização === */
 header,
 .headerNav,
 footer {
@@ -13,6 +15,7 @@ footer {
   text-align: center;
 }
 
+/* === Links do menu de navegação === */
 .headerNav a {
   color: #fff;
   text-decoration: none;
@@ -24,11 +27,12 @@ footer {
   transition: border-color 0.3s ease;
 }
 
+/* === Hover dos links da navegação === */
 .headerNav a:hover {
   border-color: #0077cc;
 }
 
-/* estilização da logo */
+/* === Estilização do título com logo === */
 h1 {
   display: flex;
   align-items: center;
@@ -36,12 +40,13 @@ h1 {
   font-size: 2rem;
 }
 
+/* === Tamanho e espaçamento da imagem da logo === */
 h1 .logo {
   height: 5rem;
   margin-right: 0.5rem;
 }
 
-/* === Container do formulário === */
+/* === Container geral do formulário === */
 form {
   max-width: 500px;
   margin: 40px auto;
@@ -52,14 +57,14 @@ form {
   border: solid 2px #1e3a5f;
 }
 
-/* === Título do formulário === */
+/* === Título e subtítulo centralizados === */
 main h1,
 main h2 {
   text-align: center;
   color: #1e3a5f;
 }
 
-/* === Layout de campos do formulário === */
+/* === Grupos de campos do formulário === */
 div[class^="cada_"],
 .form-group {
   margin-bottom: 15px;
@@ -67,13 +72,14 @@ div[class^="cada_"],
   flex-direction: column;
 }
 
-/* === Estilo de rótulos (labels) === */
+/* === Estilo dos rótulos dos inputs === */
 label {
   margin-bottom: 5px;
   font-weight: bold;
   color: #1e3a5f;
 }
 
+/* === Área de texto (descrição) === */
 textarea {
   font-family: Arial, Helvetica, sans-serif;
   resize: vertical;
@@ -85,6 +91,7 @@ textarea {
   transition: border-color 0.3s ease;
 }
 
+/* === Campos de entrada e seleção === */
 input[type="text"],
 input[type="number"],
 select {
@@ -96,7 +103,7 @@ select {
   transition: border-color 0.3s ease;
 }
 
-/* === Estilo de foco nos campos === */
+/* === Efeito de foco nos campos === */
 input[type="text"]:focus,
 select:focus {
   border-color: #1e3a5f;
@@ -115,11 +122,12 @@ button#Salvar {
   width: 100%;
 }
 
-/* === Efeito hover no botão === */
+/* === Hover no botão de envio === */
 button#Salvar:hover {
   background-color: #163050;
 }
 
+/* === Estilo de mensagens de feedback (CPF) === */
 .message {
   margin-top: 8px;
   padding: 8px 12px;
@@ -130,33 +138,33 @@ button#Salvar:hover {
   opacity: 1;
 }
 
-/* Estilo para CPF válido */
+/* === CPF válido === */
 .message.valido {
   color: #155724;
   background-color: #d4edda;
   border: 1px solid #c3e6cb;
 }
 
-/* Estilo para CPF inválido */
+/* === CPF inválido === */
 .message.invalido {
   color: #721c24;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
 }
 
-/* Estilo para CPF incompleto */
+/* === CPF incompleto === */
 .message.incompleto {
   color: #856404;
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
 }
 
-/* Efeito de desaparecimento opcional */
+/* === Classe oculta para animar desaparecimento de mensagens === */
 .message.hidden {
   opacity: 0;
 }
 
-/* eslização do pop up de modalConfirmaca */
+/* === Modal de confirmação === */
 .modal {
   position: fixed;
   top: 0;
@@ -170,6 +178,7 @@ button#Salvar:hover {
   z-index: 1000;
 }
 
+/* === Conteúdo do modal === */
 .modal-conteudo {
   background: #fff;
   padding: 30px 20px;
@@ -179,11 +188,13 @@ button#Salvar:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* === Título do modal === */
 .modal-conteudo h2 {
   margin-bottom: 20px;
   color: #1e3a5f;
 }
 
+/* === Botões dentro do modal === */
 .modal .botoes button {
   margin: 0 10px;
   padding: 10px 18px;
@@ -196,6 +207,7 @@ button#Salvar:hover {
   transition: background-color 0.3s;
 }
 
+/* === Hover nos botões do modal === */
 .modal .botoes button:hover {
   background-color: #005fa3;
 }

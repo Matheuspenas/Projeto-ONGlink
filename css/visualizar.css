@@ -1,3 +1,4 @@
+/* Reset básico */
 html,
 body {
   height: 100%;
@@ -5,6 +6,7 @@ body {
   padding: 0;
 }
 
+/*Configuração base do body */
 body {
   display: flex;
   flex-direction: column;
@@ -13,12 +15,13 @@ body {
   background-color: #ffffff;
 }
 
+/* Conteúdo principal ocupa o espaço restante da tela */
 main {
   flex-grow: 1;
   padding: 20px;
 }
 
-/* Cabeçalho e rodapé */
+/* Cabeçalho, navegação e rodapé com cor padrão e centralização */
 header,
 .headerNav,
 footer {
@@ -28,6 +31,7 @@ footer {
   text-align: center;
 }
 
+/* Links do menu de navegação */
 .headerNav a {
   color: #fff;
   text-decoration: none;
@@ -39,11 +43,12 @@ footer {
   transition: border-color 0.3s ease;
 }
 
+/* Efeito hover nas bordas dos links do menu */
 .headerNav a:hover {
   border-color: #0077cc;
 }
 
-/* estilização da logo */
+/* Título com logo*/
 h1 {
   display: flex;
   align-items: center;
@@ -51,23 +56,18 @@ h1 {
   font-size: 2rem;
 }
 
+/* Tamanho da logo e espaçamento no título */
 h1 .logo {
   height: 5rem;
   margin-right: 0.5rem;
 }
 
-.headerNav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-/* Estilização principal */
+/* Padding da área principal*/
 main {
   padding: 20px;
 }
 
+/* Ícone ao lado do filtro de tipo de ajuda */
 .filtro-icone {
   font-size: 25px;
   color: #1e3a5f;
@@ -75,7 +75,7 @@ main {
   margin-left: 10px;
 }
 
-/* Filtros */
+/* Estilização da barra de filtros*/
 .filtros {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +84,7 @@ main {
   margin-bottom: 30px;
 }
 
+/* Campos de entrada dos filtros */
 .filtros input,
 .filtros select {
   padding: 10px;
@@ -95,7 +96,7 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Container de cards */
+/* Container dos cards de necessidades */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -104,9 +105,9 @@ main {
   padding: 20px;
 }
 
-/* Card individual */
+/* Estilo de cada card individual */
 .action-card {
-  background-color: #f0f8ff; /* Azul claro suave */
+  background-color: #f0f8ff;
   border: 1px solid #cce0f5;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(30, 58, 95, 0.1);
@@ -117,19 +118,20 @@ main {
   cursor: default;
 }
 
+/* Efeito de elevação no hover do card */
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 14px rgba(30, 58, 95, 0.2);
 }
 
-/* Título do card */
+/* Título dentro dos cards */
 .card h3 {
   color: #1e3a5f;
   margin: 0 0 12px 0;
   font-size: 22px;
 }
 
-/* Texto do card */
+/* Parágrafos dentro dos cards */
 .card p {
   font-size: 15px;
   color: #333;
@@ -137,7 +139,7 @@ main {
   line-height: 1.4;
 }
 
-/* Destaques opcionais */
+/* Elementos destacados nos cards*/
 .card strong {
   color: #0077cc;
 }

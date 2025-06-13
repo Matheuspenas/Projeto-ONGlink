@@ -1,9 +1,11 @@
+/* Estilo base do corpo da página */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #ffffff; /* Fundo branco */
 }
 
+/* Estilização geral do cabeçalho, menu de navegação e rodapé */
 header,
 .headerNav,
 footer {
@@ -13,6 +15,7 @@ footer {
   text-align: center;
 }
 
+/* Estilo dos links de navegação no cabeçalho */
 .headerNav a {
   color: #fff;
   text-decoration: none;
@@ -24,11 +27,12 @@ footer {
   transition: border-color 0.3s ease;
 }
 
+/* Quando o mouse passa sobre os links de navegação Mostra uma borda azul no hover */
 .headerNav a:hover {
   border-color: #0077cc;
 }
 
-/* estilização da logo */
+/* Estilização do texto no cabeçalho */
 h1 {
   display: flex;
   align-items: center;
@@ -36,11 +40,13 @@ h1 {
   font-size: 2rem;
 }
 
+/* Tamanho e espaçamento da imagem da logo */
 h1 .logo {
   height: 5rem;
   margin-right: 0.5rem;
 }
 
+/* Títulos da seção "Sobre" */
 .sobre h1,
 .sobre h2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -50,7 +56,7 @@ h1 .logo {
 }
 
 #sobre {
-  background-color: #e6f2fa; /* azul claro suave */
+  background-color: #e6f2fa;
   padding: 40px 20px;
   text-align: center;
   border-radius: 12px;
@@ -59,18 +65,21 @@ h1 .logo {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Título principal da seção Sobre */
 #sobre h1 {
   font-size: 28px;
-  color: #1e3a5f; /* azul escuro */
+  color: #1e3a5f;
   margin-bottom: 10px;
 }
 
+/* Subtítulo da seção Sobre */
 #sobre h2 {
   font-size: 22px;
-  color: #0077cc; /* azul principal */
+  color: #0077cc;
   margin-bottom: 20px;
 }
 
+/* Parágrafos na seção Sobre */
 #sobre p {
   font-size: 16px;
   color: #333;
@@ -79,6 +88,7 @@ h1 .logo {
   padding: 0 10px;
 }
 
+/* Container que organiza os cards das necessidades */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -87,32 +97,37 @@ h1 .logo {
   padding: 30px;
 }
 
+/* Estilização visual de cada card */
 .action-card {
   background-color: #f4f4f4;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   width: 280px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Suaviza a animação */
   cursor: pointer;
 }
 
+/* Animação de elevação ao passar o mouse */
 .action-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Eleva o card levemente */
 }
 
+/* Título dentro dos cards */
 .action-card h2 {
   color: #1e3a5f;
   margin-bottom: 10px;
 }
 
+/* Texto nos cards */
 .action-card p {
   font-size: 14px;
   color: #555;
   margin-bottom: 15px;
 }
 
+/* Botão dentro dos cards */
 .action-card button {
   padding: 10px 16px;
   background-color: #0077cc;
@@ -122,6 +137,7 @@ h1 .logo {
   cursor: pointer;
 }
 
+/* Estilo do botão ao passar o mouse */
 .action-card button:hover {
   background-color: #005fa3;
 }
